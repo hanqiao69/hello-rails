@@ -1,0 +1,2453 @@
+  [1m[36m (1.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreatePuppies (20160105212658)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "puppies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160105212658"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mPuppy Load (0.1ms)[0m  [1mSELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" ASC LIMIT 1[0m
+  [1m[35mPuppy Load (0.3ms)[0m  SELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" ASC LIMIT 1
+  [1m[36mPuppy Load (0.1ms)[0m  [1mSELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" ASC LIMIT 1[0m
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreatePuppies (20160105212658)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "puppies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "color" varchar, "owner" varchar NOT NULL, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160105212658"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mPuppy Load (0.2ms)[0m  SELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" ASC LIMIT 1
+  [1m[36m (1.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreatePuppies (20160105212658)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "puppies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "color" varchar, "owner" varchar NOT NULL, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160105212658"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mPuppy Load (0.2ms)[0m  [1mSELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" ASC LIMIT 1[0m
+  [1m[36mPuppy Load (0.1ms)[0m  [1mSELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "puppies" ("owner", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["owner", "me"], ["created_at", "2016-01-05 21:45:50.347382"], ["updated_at", "2016-01-05 21:45:50.347382"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mPuppy Load (0.2ms)[0m  [1mSELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "puppies" SET "color" = ?, "updated_at" = ? WHERE "puppies"."id" = ?[0m  [["color", "white"], ["updated_at", "2016-01-05 21:50:11.854096"], ["id", 1]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateSuggestions (20160105215706)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "suggestions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "puppy_id" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160105215706"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "puppies"[0m
+  [1m[35mPuppy Load (0.2ms)[0m  SELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "puppies"[0m
+  [1m[35mPuppy Load (0.2ms)[0m  SELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" ASC LIMIT 1
+  [1m[36mSuggestion Load (0.1ms)[0m  [1mSELECT "suggestions".* FROM "suggestions" WHERE "suggestions"."puppy_id" = ?[0m  [["puppy_id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "suggestions" ("name", "puppy_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Hund"], ["puppy_id", 1], ["created_at", "2016-01-05 22:04:33.415399"], ["updated_at", "2016-01-05 22:04:33.415399"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+  [1m[36mPuppy Load (0.1ms)[0m  [1mSELECT  "puppies".* FROM "puppies"  ORDER BY "puppies"."id" ASC LIMIT 1[0m
+  [1m[35mSuggestion Load (0.1ms)[0m  SELECT "suggestions".* FROM "suggestions" WHERE "suggestions"."puppy_id" = ?  [["puppy_id", 1]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "suggestions" ("name", "puppy_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Hund"], ["puppy_id", 1], ["created_at", "2016-01-05 22:06:01.344131"], ["updated_at", "2016-01-05 22:06:01.344131"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/" for ::1 at 2016-01-05 14:43:52 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/railties-4.2.5/lib/rails/templates/rails/welcome/index.html.erb (1.6ms)
+Completed 200 OK in 18ms (Views: 10.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 14:44:48 -0800
+Processing by PuppiesController#index as HTML
+  Rendered puppies/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 1297ms (Views: 1296.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 14:44:50 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 14:44:50 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 14:44:50 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 14:44:50 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 14:44:50 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 14:44:50 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 14:44:50 -0800
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 14:58:34 -0800
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.2ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 19ms (Views: 14.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 14:58:34 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 14:58:34 -0800
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 14:58:34 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 14:58:34 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 14:58:34 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 14:58:34 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 14:58:34 -0800
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 15:00:54 -0800
+Processing by PuppiesController#index as HTML
+  [1m[36mPuppy Load (0.1ms)[0m  [1mSELECT "puppies".* FROM "puppies"[0m
+  Rendered puppies/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 15:00:54 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 15:00:54 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 15:00:54 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 15:00:54 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 15:00:54 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 15:00:54 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 15:00:54 -0800
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 15:01:15 -0800
+Processing by PuppiesController#index as HTML
+  Rendered puppies/index.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/square/Desktop/corgi/app/views/puppies/index.html.erb:10: unknown regexp option - l
+unmatched close parenthesis: /n );@output_buffer.safe_append='
+'.freeze;			 if puppy.color? 
+@output_buffer.safe_append='				It has the color '.freeze;@output_buffer.append=(puppy.color );@output_buffer.safe_append='
+'.freeze;			 end 
+@output_buffer.safe_append='		</i
+/Users/square/Desktop/corgi/app/views/puppies/index.html.erb:12: unterminated regexp meets end of file
+/Users/square/Desktop/corgi/app/views/puppies/index.html.erb:12: syntax error, unexpected end-of-input, expecting ')'):
+  app/views/puppies/index.html.erb:10: unknown regexp option - l
+  app/views/puppies/index.html.erb:12: unterminated regexp meets end of file
+  app/views/puppies/index.html.erb:12: syntax error, unexpected end-of-input, expecting ')'
+
+
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (50.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (117.6ms)
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 15:01:17 -0800
+Processing by PuppiesController#index as HTML
+  Rendered puppies/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/square/Desktop/corgi/app/views/puppies/index.html.erb:10: unknown regexp option - l
+unmatched close parenthesis: /n );@output_buffer.safe_append='
+'.freeze;			 if puppy.color? 
+@output_buffer.safe_append='				It has the color '.freeze;@output_buffer.append=(puppy.color );@output_buffer.safe_append='
+'.freeze;			 end 
+@output_buffer.safe_append='		</i
+/Users/square/Desktop/corgi/app/views/puppies/index.html.erb:12: unterminated regexp meets end of file
+/Users/square/Desktop/corgi/app/views/puppies/index.html.erb:12: syntax error, unexpected end-of-input, expecting ')'):
+  app/views/puppies/index.html.erb:10: unknown regexp option - l
+  app/views/puppies/index.html.erb:12: unterminated regexp meets end of file
+  app/views/puppies/index.html.erb:12: syntax error, unexpected end-of-input, expecting ')'
+
+
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (42.7ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (92.4ms)
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 15:01:24 -0800
+Processing by PuppiesController#index as HTML
+  Rendered puppies/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/square/Desktop/corgi/app/views/puppies/index.html.erb:10: unknown regexp option - l
+unmatched close parenthesis: /n );@output_buffer.safe_append='
+'.freeze;			 if puppy.color? 
+@output_buffer.safe_append='				It has the color '.freeze;@output_buffer.append=(puppy.color );@output_buffer.safe_append='
+'.freeze;			 end 
+@output_buffer.safe_append='		</i
+/Users/square/Desktop/corgi/app/views/puppies/index.html.erb:12: unterminated regexp meets end of file
+/Users/square/Desktop/corgi/app/views/puppies/index.html.erb:12: syntax error, unexpected end-of-input, expecting ')'):
+  app/views/puppies/index.html.erb:10: unknown regexp option - l
+  app/views/puppies/index.html.erb:12: unterminated regexp meets end of file
+  app/views/puppies/index.html.erb:12: syntax error, unexpected end-of-input, expecting ')'
+
+
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (48.0ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (43.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (95.4ms)
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 15:01:34 -0800
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.1ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 12ms (Views: 11.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 15:01:34 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 15:01:34 -0800
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 15:01:34 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 15:01:34 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 15:01:34 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 15:01:34 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 15:01:34 -0800
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 15:01:41 -0800
+Processing by PuppiesController#index as HTML
+  [1m[36mPuppy Load (0.1ms)[0m  [1mSELECT "puppies".* FROM "puppies"[0m
+  Rendered puppies/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 15:01:41 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 15:01:41 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 15:01:41 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 15:01:41 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 15:01:41 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 15:01:41 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 15:01:41 -0800
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 15:01:50 -0800
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.2ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 15:01:50 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 15:01:50 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 15:01:50 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 15:01:50 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 15:01:50 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 15:01:50 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 15:01:50 -0800
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 15:02:31 -0800
+Processing by PuppiesController#index as HTML
+  [1m[36mPuppy Load (0.1ms)[0m  [1mSELECT "puppies".* FROM "puppies"[0m
+  Rendered puppies/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 15:02:31 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 15:02:31 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 15:02:31 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 15:02:31 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 15:02:31 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 15:02:31 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 15:02:31 -0800
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 15:09:42 -0800
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.1ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 15:09:42 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 15:09:42 -0800
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 15:09:42 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 15:09:42 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 15:09:42 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 15:09:42 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 15:09:42 -0800
+
+
+Started GET "/puppies/1" for ::1 at 2016-01-05 15:09:43 -0800
+Processing by PuppiesController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+ActionView::MissingTemplate (Missing template puppies/show, application/show with {:locale=>[:en], :formats=>[:html, :xml], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/square/Desktop/corgi/app/views"
+):
+  actionview (4.2.5) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.5) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.5) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.5) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.5) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.5) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.5) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.5) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.5) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.5) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.5) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/square/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  activesupport (4.2.5) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.5) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.5) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.5) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.5) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.5) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.5) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/square/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/square/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/square/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (48.8ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (37.6ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (83.5ms)
+
+
+Started GET "/puppies/1" for ::1 at 2016-01-05 15:09:43 -0800
+Processing by PuppiesController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+ActionView::MissingTemplate (Missing template puppies/show, application/show with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/square/Desktop/corgi/app/views"
+):
+  actionview (4.2.5) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.5) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.5) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.5) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.5) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.5) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.5) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.5) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.5) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.5) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.5) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/square/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  activesupport (4.2.5) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.5) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.5) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.5) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.5) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.5) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.5) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/square/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/square/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/square/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (50.6ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (57.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (116.4ms)
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 15:16:25 -0800
+Processing by PuppiesController#index as HTML
+  [1m[36mPuppy Load (0.2ms)[0m  [1mSELECT "puppies".* FROM "puppies"[0m
+  Rendered puppies/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 20ms (Views: 17.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puppies/1" for ::1 at 2016-01-05 15:16:29 -0800
+Processing by PuppiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPuppy Load (0.1ms)[0m  SELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSuggestion Load (0.2ms)[0m  [1mSELECT "suggestions".* FROM "suggestions" WHERE "suggestions"."puppy_id" = ?[0m  [["puppy_id", 1]]
+  Rendered puppies/show.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 37ms (Views: 30.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/puppies/1" for ::1 at 2016-01-05 15:25:59 -0800
+Processing by PuppiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPuppy Load (0.1ms)[0m  SELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSuggestion Load (0.0ms)[0m  [1mSELECT "suggestions".* FROM "suggestions" WHERE "suggestions"."puppy_id" = ?[0m  [["puppy_id", 1]]
+  Rendered puppies/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 15:25:59 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 15:25:59 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 15:25:59 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 15:25:59 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 15:25:59 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 15:25:59 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 15:25:59 -0800
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 15:26:03 -0800
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.1ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 15:26:06 -0800
+Processing by PuppiesController#index as HTML
+  [1m[36mPuppy Load (0.1ms)[0m  [1mSELECT "puppies".* FROM "puppies"[0m
+  Rendered puppies/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 15:26:06 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 15:26:06 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 15:26:06 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 15:26:06 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 15:26:06 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 15:26:06 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 15:26:06 -0800
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 15:26:07 -0800
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.1ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 12ms (Views: 11.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 15:26:07 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 15:26:07 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 15:26:07 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 15:26:07 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 15:26:07 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 15:26:07 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 15:26:07 -0800
+
+
+Started GET "/puppies/1" for ::1 at 2016-01-05 15:26:08 -0800
+Processing by PuppiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPuppy Load (0.1ms)[0m  [1mSELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSuggestion Load (0.1ms)[0m  SELECT "suggestions".* FROM "suggestions" WHERE "suggestions"."puppy_id" = ?  [["puppy_id", 1]]
+  Rendered puppies/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/puppies/new" for ::1 at 2016-01-05 15:26:20 -0800
+Processing by PuppiesController#new as HTML
+  Rendered puppies/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/puppies/new" for ::1 at 2016-01-05 15:32:14 -0800
+Processing by PuppiesController#new as HTML
+  Rendered puppies/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 21ms (Views: 20.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 15:32:14 -0800
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 15:32:14 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 15:32:14 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 15:32:14 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 15:32:14 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 15:32:14 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 15:32:14 -0800
+
+
+Started GET "/puppies/new" for ::1 at 2016-01-05 15:36:12 -0800
+Processing by PuppiesController#new as HTML
+  Rendered puppies/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 17ms (Views: 16.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 15:36:12 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 15:36:12 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 15:36:12 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 15:36:12 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 15:36:12 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 15:36:12 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 15:36:12 -0800
+
+
+Started POST "/puppies" for ::1 at 2016-01-05 15:36:27 -0800
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vp9T3VRmlFLlqH67534MQbfH4veygyLjSS8yZf0KY6zDY4cS5emEEvnUnXgF2oiEkNbtpwOhJngZfQq1N3Wz3w==", "puppy"=>{"owner"=>"", "color"=>"", "description"=>""}, "commit"=>"Create Puppy"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  app/controllers/puppies_controller.rb:14:in `create'
+
+
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.1ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (37.8ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (85.2ms)
+
+
+Started POST "/puppies" for ::1 at 2016-01-05 15:36:52 -0800
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vp9T3VRmlFLlqH67534MQbfH4veygyLjSS8yZf0KY6zDY4cS5emEEvnUnXgF2oiEkNbtpwOhJngZfQq1N3Wz3w==", "puppy"=>{"owner"=>"", "color"=>"", "description"=>""}, "commit"=>"Create Puppy"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms)
+
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  app/controllers/puppies_controller.rb:14:in `create'
+
+
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.5ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (46.0ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (45.6ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (101.9ms)
+
+
+Started GET "/puppies/new" for ::1 at 2016-01-05 15:39:15 -0800
+Processing by PuppiesController#new as HTML
+  Rendered puppies/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 18ms (Views: 17.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 15:39:15 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 15:39:15 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 15:39:15 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 15:39:15 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 15:39:15 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 15:39:15 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 15:39:15 -0800
+
+
+Started POST "/puppies" for ::1 at 2016-01-05 15:39:18 -0800
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6PJgR2Cz6ddMvtBzSjaYq6yuIejHuHubNdhJD0nECNOVDrSI0Tz5l1DCM7Cokhxui78uuHaafwBlinHfg7vYoA==", "puppy"=>{"owner"=>"", "color"=>"", "description"=>""}, "commit"=>"Create Puppy"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+NameError (undefined local variable or method `param' for #<PuppiesController:0x007faa325ed1f0>
+Did you mean?  params
+               params=
+               @_params):
+  app/controllers/puppies_controller.rb:29:in `puppy_params'
+  app/controllers/puppies_controller.rb:14:in `create'
+
+
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (64.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (39.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (86.7ms)
+
+
+Started GET "/puppies/new" for ::1 at 2016-01-05 15:39:40 -0800
+Processing by PuppiesController#new as HTML
+  Rendered puppies/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 23ms (Views: 22.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 15:39:40 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 15:39:40 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 15:39:40 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 15:39:40 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 15:39:40 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 15:39:40 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 15:39:40 -0800
+
+
+Started POST "/puppies" for ::1 at 2016-01-05 15:39:41 -0800
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X+yg5nrtmOAJufPxU7H1RvnQ/CQ8jY/bWTZZrQrf3h4iEHQpy2KIoBXFEDKxFXGD3sHzdI2vi0AJZGF9wKAObQ==", "puppy"=>{"owner"=>"", "color"=>"", "description"=>""}, "commit"=>"Create Puppy"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms)
+
+ActionView::MissingTemplate (Missing template puppies/create, application/create with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/square/Desktop/corgi/app/views"
+):
+  actionview (4.2.5) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.5) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.5) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.5) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.5) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.5) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.5) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.5) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.5) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.5) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.5) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/square/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  activesupport (4.2.5) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.5) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.5) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.5) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.5) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.5) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.5) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/square/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /Users/square/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /Users/square/.rvm/rubies/ruby-2.3.0/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (53.9ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (39.6ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (87.1ms)
+
+
+Started POST "/puppies" for ::1 at 2016-01-05 15:40:46 -0800
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X+yg5nrtmOAJufPxU7H1RvnQ/CQ8jY/bWTZZrQrf3h4iEHQpy2KIoBXFEDKxFXGD3sHzdI2vi0AJZGF9wKAObQ==", "puppy"=>{"owner"=>"", "color"=>"", "description"=>""}, "commit"=>"Create Puppy"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Redirected to http://localhost:3000/puppies
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 15:40:46 -0800
+Processing by PuppiesController#index as HTML
+  [1m[36mPuppy Load (0.1ms)[0m  [1mSELECT "puppies".* FROM "puppies"[0m
+  Rendered puppies/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 15:40:46 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 15:40:46 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 15:40:46 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 15:40:46 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 15:40:46 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 15:40:46 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 15:40:46 -0800
+
+
+Started GET "/puppies/1" for ::1 at 2016-01-05 15:40:47 -0800
+Processing by PuppiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPuppy Load (0.1ms)[0m  SELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSuggestion Load (0.1ms)[0m  [1mSELECT "suggestions".* FROM "suggestions" WHERE "suggestions"."puppy_id" = ?[0m  [["puppy_id", 1]]
+  Rendered puppies/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/puppies/new" for ::1 at 2016-01-05 15:40:53 -0800
+Processing by PuppiesController#new as HTML
+  Rendered puppies/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 19ms (Views: 18.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/puppies" for ::1 at 2016-01-05 15:40:54 -0800
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KBY7HdW7gwqd1XEVS6N7gPhWvXnnNAzJwvtAX8fD09ZV6u/SZDSTSoGpktapB/9F30eyKVYWCFKSqXiPDbwDpQ==", "puppy"=>{"owner"=>"", "color"=>"", "description"=>""}, "commit"=>"Create Puppy"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Redirected to http://localhost:3000/puppies
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 15:40:54 -0800
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.1ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 15:41:38 -0800
+Processing by PuppiesController#index as HTML
+  [1m[36mPuppy Load (0.1ms)[0m  [1mSELECT "puppies".* FROM "puppies"[0m
+  Rendered puppies/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 15:41:38 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 15:41:38 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 15:41:38 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 15:41:38 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 15:41:38 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 15:41:38 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 15:41:38 -0800
+
+
+Started GET "/puppies/new.1" for ::1 at 2016-01-05 15:41:40 -0800
+Processing by PuppiesController#new as 
+  Rendered puppies/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 19ms (Views: 18.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 15:42:00 -0800
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.1ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 15:42:00 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 15:42:00 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 15:42:00 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 15:42:00 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 15:42:00 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 15:42:00 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 15:42:00 -0800
+
+
+Started GET "/puppies/new.1" for ::1 at 2016-01-05 15:42:26 -0800
+Processing by PuppiesController#new as 
+  Rendered puppies/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 20ms (Views: 19.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/puppies" for ::1 at 2016-01-05 15:42:29 -0800
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"25wGPDKVMOHdxkb2NS5ijE/c7cJuLt6+/TWlMHnOkeSmYNLzgxogocG6pTXXiuZJaM3ikt8M2iWtZ53gs7FBlw==", "puppy"=>{"owner"=>"Rachel", "color"=>"", "description"=>""}, "commit"=>"Create Puppy"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "puppies" ("owner", "color", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["owner", "Rachel"], ["color", ""], ["description", ""], ["created_at", "2016-01-05 23:42:29.956613"], ["updated_at", "2016-01-05 23:42:29.956613"]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/puppies
+Completed 302 Found in 5ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 15:42:29 -0800
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.2ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 15:43:26 -0800
+Processing by PuppiesController#index as HTML
+  [1m[36mPuppy Load (0.1ms)[0m  [1mSELECT "puppies".* FROM "puppies"[0m
+  Rendered puppies/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 15:43:26 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 15:43:26 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 15:43:26 -0800
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 15:43:26 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 15:43:26 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 15:43:26 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 15:43:26 -0800
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 15:43:28 -0800
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.1ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 15:43:28 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 15:43:28 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 15:43:28 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 15:43:28 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 15:43:28 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 15:43:28 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 15:43:28 -0800
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 15:43:31 -0800
+Processing by PuppiesController#index as HTML
+  [1m[36mPuppy Load (0.2ms)[0m  [1mSELECT "puppies".* FROM "puppies"[0m
+  Rendered puppies/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/puppies/1" for ::1 at 2016-01-05 15:43:33 -0800
+Processing by PuppiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPuppy Load (0.1ms)[0m  SELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSuggestion Load (0.1ms)[0m  [1mSELECT "suggestions".* FROM "suggestions" WHERE "suggestions"."puppy_id" = ?[0m  [["puppy_id", 1]]
+  Rendered puppies/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/puppies/new.1" for ::1 at 2016-01-05 15:43:36 -0800
+Processing by PuppiesController#new as 
+  Rendered puppies/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 23ms (Views: 22.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 15:43:47 -0800
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.1ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 15:46:26 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.1ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (25.1ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined local variable or method `puppy' for #<#<Class:0x007f975a6da738>:0x007f975a6d0b98>
+Did you mean?  puppy_url):
+    1: <h1>Puppies, Qiao</h1>
+    2: 
+    3: <ul>
+    4: 	<p><%= link_to "Create a new puppy", new_puppy_url(puppy) %></p>
+    5: 	<% @puppies.each do |puppy| %>
+    6: 		<li>
+    7: 			<p> Puppy owned by <%= puppy.owner %> </p>
+  app/views/puppies/index.html.erb:4:in `_app_views_puppies_index_html_erb__332683455559646072_70144027406220'
+
+
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (64.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (45.9ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (101.7ms)
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 15:46:36 -0800
+Processing by PuppiesController#index as HTML
+  [1m[36mPuppy Load (0.1ms)[0m  [1mSELECT "puppies".* FROM "puppies"[0m
+  Rendered puppies/index.html.erb within layouts/application (16.1ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined local variable or method `puppy' for #<#<Class:0x007f975a6da738>:0x007f975cd42100>
+Did you mean?  puppy_url):
+    1: <h1>Puppies, Qiao</h1>
+    2: 
+    3: <ul>
+    4: 	<p><%= link_to "Create a new puppy", new_puppy_url(puppy) %></p>
+    5: 	<% @puppies.each do |puppy| %>
+    6: 		<li>
+    7: 			<p> Puppy owned by <%= puppy.owner %> </p>
+  app/views/puppies/index.html.erb:4:in `_app_views_puppies_index_html_erb__332683455559646072_70144027406220'
+
+
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (47.1ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (42.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (89.8ms)
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 15:46:53 -0800
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.1ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (16.4ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined local variable or method `puppy' for #<#<Class:0x007f975a6da738>:0x007f9760863590>
+Did you mean?  puppy_url):
+    1: <h1>Puppies, Qiao</h1>
+    2: 
+    3: <p><%= link_to "Create a new puppy", new_puppy_url(puppy) %></p>
+    4: 
+    5: <ul>
+    6: 	<% @puppies.each do |puppy| %>
+  app/views/puppies/index.html.erb:3:in `_app_views_puppies_index_html_erb__332683455559646072_70144068094520'
+
+
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.1ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (51.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (44.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (96.4ms)
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 15:47:16 -0800
+Processing by PuppiesController#index as HTML
+  [1m[36mPuppy Load (0.1ms)[0m  [1mSELECT "puppies".* FROM "puppies"[0m
+  Rendered puppies/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 189ms (Views: 188.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 15:47:16 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 15:47:16 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 15:47:16 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 15:47:16 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 15:47:16 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 15:47:16 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 15:47:16 -0800
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 15:48:42 -0800
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.2ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 38ms (Views: 34.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 15:48:43 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 15:48:43 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 15:48:43 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 15:48:43 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 15:48:43 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 15:48:43 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 15:48:43 -0800
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 15:49:20 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.1ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 162ms (Views: 151.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 15:49:20 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 15:49:20 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 15:49:20 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 15:49:20 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 15:49:20 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 15:49:20 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 15:49:20 -0800
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 15:50:18 -0800
+Processing by PuppiesController#index as HTML
+  [1m[36mPuppy Load (0.2ms)[0m  [1mSELECT "puppies".* FROM "puppies"[0m
+  Rendered puppies/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 27ms (Views: 24.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 15:50:18 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 15:50:18 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 15:50:18 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 15:50:18 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 15:50:18 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 15:50:18 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 15:50:18 -0800
+
+
+Started GET "/puppies/new" for ::1 at 2016-01-05 15:51:24 -0800
+Processing by PuppiesController#new as HTML
+  Rendered puppies/new.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 34ms (Views: 32.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/puppies" for ::1 at 2016-01-05 15:51:55 -0800
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZLGlolBue/x4emUyGDQp8KhHK3O/jrQLpjchQq/ZIQUZTXFt4eFrvGQGhvH6kK01j1YkIw6ssJD2ZRmSZabxdg==", "puppy"=>{"owner"=>"", "color"=>"red", "description"=>"red"}, "commit"=>"Create Puppy"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.1ms)
+
+NameError (undefined local variable or method `puppy' for #<PuppiesController:0x007ffe50d23358>
+Did you mean?  @puppy):
+  app/controllers/puppies_controller.rb:20:in `create'
+
+
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.8ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (51.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (43.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (92.1ms)
+
+
+Started POST "/puppies" for ::1 at 2016-01-05 15:52:12 -0800
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZLGlolBue/x4emUyGDQp8KhHK3O/jrQLpjchQq/ZIQUZTXFt4eFrvGQGhvH6kK01j1YkIw6ssJD2ZRmSZabxdg==", "puppy"=>{"owner"=>"", "color"=>"red", "description"=>"red"}, "commit"=>"Create Puppy"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms)
+
+RuntimeError (In order to use respond_with, first you need to declare the formats your controller responds to in the class level.):
+  app/controllers/puppies_controller.rb:20:in `create'
+
+
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (45.9ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (44.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (98.8ms)
+
+
+Started POST "/puppies" for ::1 at 2016-01-05 15:52:15 -0800
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZLGlolBue/x4emUyGDQp8KhHK3O/jrQLpjchQq/ZIQUZTXFt4eFrvGQGhvH6kK01j1YkIw6ssJD2ZRmSZabxdg==", "puppy"=>{"owner"=>"", "color"=>"red", "description"=>"red"}, "commit"=>"Create Puppy"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms)
+
+RuntimeError (In order to use respond_with, first you need to declare the formats your controller responds to in the class level.):
+  app/controllers/puppies_controller.rb:20:in `create'
+
+
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (52.6ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (46.5ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (100.7ms)
+
+
+Started GET "/puppies/new" for ::1 at 2016-01-05 15:52:36 -0800
+Processing by PuppiesController#new as HTML
+  Rendered puppies/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 16ms (Views: 11.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 15:52:36 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 15:52:36 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 15:52:36 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 15:52:36 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 15:52:36 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 15:52:36 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 15:52:36 -0800
+
+
+Started POST "/puppies" for ::1 at 2016-01-05 15:52:39 -0800
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qA+t8V85fxylfZ6VTo1R/4R2XVx120NxbM1WhM3PScvV83k+7rZvXLkBfVasKdU6o2dSDMT5R+o8n25UB7CZuA==", "puppy"=>{"owner"=>"", "color"=>"red", "description"=>"red"}, "commit"=>"Create Puppy"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.1ms)
+
+RuntimeError (In order to use respond_with, first you need to declare the formats your controller responds to in the class level.):
+  app/controllers/puppies_controller.rb:16:in `create'
+
+
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.7ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.9ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (42.0ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (98.0ms)
+
+
+Started POST "/puppies" for ::1 at 2016-01-05 15:54:24 -0800
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qA+t8V85fxylfZ6VTo1R/4R2XVx120NxbM1WhM3PScvV83k+7rZvXLkBfVasKdU6o2dSDMT5R+o8n25UB7CZuA==", "puppy"=>{"owner"=>"", "color"=>"red", "description"=>"red"}, "commit"=>"Create Puppy"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered puppies/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 28ms (Views: 13.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 15:54:24 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 15:54:24 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 15:54:24 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 15:54:24 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 15:54:24 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 15:54:24 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 15:54:24 -0800
+
+
+Started POST "/puppies" for ::1 at 2016-01-05 15:54:26 -0800
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yTOBET1PaUOGPNXJQBqMvBPsZAgOBKhjlLfSR/MNyt20z1XejMB5A5pANgqivgh5NP1rWL8mrPjE5eqXOXIarg==", "puppy"=>{"owner"=>"", "color"=>"red", "description"=>"red"}, "commit"=>"Create Puppy"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered puppies/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 17ms (Views: 12.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/puppies/new" for ::1 at 2016-01-05 15:59:25 -0800
+Processing by PuppiesController#new as HTML
+  Rendered puppies/new.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/square/Desktop/corgi/app/views/puppies/new.html.erb:19: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/square/Desktop/corgi/app/views/puppies/new.html.erb:21: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/puppies/new.html.erb:19: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/puppies/new.html.erb:21: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (55.6ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (42.7ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (92.8ms)
+
+
+Started GET "/puppies/new" for ::1 at 2016-01-05 15:59:58 -0800
+Processing by PuppiesController#new as HTML
+  Rendered puppies/new.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/square/Desktop/corgi/app/views/puppies/new.html.erb:19: syntax error, unexpected keyword_ensure, expecting keyword_end
+/Users/square/Desktop/corgi/app/views/puppies/new.html.erb:21: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/puppies/new.html.erb:19: syntax error, unexpected keyword_ensure, expecting keyword_end
+  app/views/puppies/new.html.erb:21: syntax error, unexpected end-of-input, expecting keyword_end
+
+
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.7ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (51.5ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (42.6ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (90.6ms)
+
+
+Started GET "/puppies/new" for ::1 at 2016-01-05 16:00:41 -0800
+Processing by PuppiesController#new as HTML
+  Rendered puppies/new.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `error' for #<Puppy:0x007ffe4ea293c0>
+Did you mean?  errors):
+    1: <h1>Add a new Puppy</h1>
+    2: 
+    3: <% unless @puppy.error.empty? %>
+    4: 	<h2>Error</h2>
+    5: 	<ul>
+    6: 		<% @puppy.errors.full_messages.each do |error| %>
+  app/views/puppies/new.html.erb:3:in `_app_views_puppies_new_html_erb__3972628685827001161_70365108771080'
+
+
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (47.0ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (43.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (92.0ms)
+
+
+Started GET "/puppies/new" for ::1 at 2016-01-05 16:01:22 -0800
+Processing by PuppiesController#new as HTML
+  Rendered puppies/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 16:01:22 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 16:01:22 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 16:01:22 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 16:01:22 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 16:01:22 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 16:01:22 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 16:01:22 -0800
+
+
+Started POST "/puppies" for ::1 at 2016-01-05 16:01:28 -0800
+Processing by PuppiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qBp3XH3EGWSbzZiQYQMte705uXjvci/AhXc3laMNNJrV5qOTzEsJJIexe1ODp6m+mii2KF5QK1vVJQ9FaXLk6Q==", "puppy"=>{"owner"=>"", "color"=>"red", "description"=>"red"}, "commit"=>"Create Puppy"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered puppies/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 17ms (Views: 13.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 16:03:41 -0800
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.1ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 12ms (Views: 11.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2016-01-05 16:04:52 -0800
+Processing by PuppiesController#index as HTML
+  [1m[36mPuppy Load (0.2ms)[0m  [1mSELECT "puppies".* FROM "puppies"[0m
+  Rendered puppies/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 27ms (Views: 24.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puppies/2" for ::1 at 2016-01-05 16:05:00 -0800
+Processing by PuppiesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mPuppy Load (0.2ms)[0m  SELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mSuggestion Load (0.1ms)[0m  [1mSELECT "suggestions".* FROM "suggestions" WHERE "suggestions"."puppy_id" = ?[0m  [["puppy_id", 2]]
+  Rendered puppies/show.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 30ms (Views: 23.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puppies/1" for ::1 at 2016-01-05 16:05:18 -0800
+Processing by PuppiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPuppy Load (0.1ms)[0m  SELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSuggestion Load (0.1ms)[0m  [1mSELECT "suggestions".* FROM "suggestions" WHERE "suggestions"."puppy_id" = ?[0m  [["puppy_id", 1]]
+  Rendered puppies/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-01-05 16:13:33 -0800
+
+SyntaxError (/Users/square/Desktop/corgi/config/routes.rb:59: syntax error, unexpected keyword_end, expecting end-of-input):
+  config/routes.rb:59: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (46.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (38.1ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (88.3ms)
+
+
+Started GET "/" for ::1 at 2016-01-05 16:13:53 -0800
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.2ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 99ms (Views: 96.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 16:13:53 -0800
+
+
+Started GET "/assets/suggestions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 16:13:53 -0800
+
+
+Started GET "/assets/suggestions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 16:13:53 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 16:13:53 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 16:13:53 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 16:13:53 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 16:13:53 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 16:13:53 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 16:13:53 -0800
+
+
+Started GET "/" for ::1 at 2016-01-05 16:15:10 -0800
+Processing by PuppiesController#index as HTML
+  [1m[36mPuppy Load (0.1ms)[0m  [1mSELECT "puppies".* FROM "puppies"[0m
+  Rendered puppies/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 16:15:11 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 16:15:11 -0800
+
+
+Started GET "/assets/suggestions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 16:15:11 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 16:15:11 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 16:15:11 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 16:15:11 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 16:15:11 -0800
+
+
+Started GET "/assets/suggestions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 16:15:11 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 16:15:11 -0800
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 16:15:18 -0800
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.1ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 22ms (Views: 21.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/puppies/1" for ::1 at 2016-01-05 16:15:20 -0800
+Processing by PuppiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPuppy Load (0.4ms)[0m  [1mSELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSuggestion Load (0.1ms)[0m  SELECT "suggestions".* FROM "suggestions" WHERE "suggestions"."puppy_id" = ?  [["puppy_id", 1]]
+  Rendered puppies/show.html.erb within layouts/application (44.8ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 0.8ms)
+
+ActionView::Template::Error (undefined method `puppy_suggestions_path' for #<#<Class:0x007ffe49660a18>:0x007ffe4965bb30>
+Did you mean?  puppies_path):
+     6: 	<% end %>
+     7: </ul>
+     8: 
+     9: <%= form_for [@puppy, @puppy.suggestions.build] do |f| %>
+    10: 	<p>Suggestion: <%= f.text_field :name %></p>
+    11: 	<%= f.submit %>
+    12: <% end %>
+  app/views/puppies/show.html.erb:9:in `_app_views_puppies_show_html_erb___2367505771736672962_70365064907720'
+
+
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (46.6ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (46.6ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (103.0ms)
+
+
+Started GET "/puppies/1" for ::1 at 2016-01-05 16:15:21 -0800
+Processing by PuppiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPuppy Load (0.1ms)[0m  [1mSELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSuggestion Load (0.1ms)[0m  SELECT "suggestions".* FROM "suggestions" WHERE "suggestions"."puppy_id" = ?  [["puppy_id", 1]]
+  Rendered puppies/show.html.erb within layouts/application (21.8ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `puppy_suggestions_path' for #<#<Class:0x007ffe49660a18>:0x007ffe49994608>
+Did you mean?  puppies_path):
+     6: 	<% end %>
+     7: </ul>
+     8: 
+     9: <%= form_for [@puppy, @puppy.suggestions.build] do |f| %>
+    10: 	<p>Suggestion: <%= f.text_field :name %></p>
+    11: 	<%= f.submit %>
+    12: <% end %>
+  app/views/puppies/show.html.erb:9:in `_app_views_puppies_show_html_erb___2367505771736672962_70365066565940'
+
+
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.7ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (54.9ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (37.8ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (87.0ms)
+
+
+Started GET "/puppies/1" for ::1 at 2016-01-05 16:20:10 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PuppiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPuppy Load (0.1ms)[0m  SELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSuggestion Load (0.1ms)[0m  [1mSELECT "suggestions".* FROM "suggestions" WHERE "suggestions"."puppy_id" = ?[0m  [["puppy_id", 1]]
+  Rendered puppies/show.html.erb within layouts/application (35.7ms)
+Completed 200 OK in 275ms (Views: 256.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/suggestions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 16:20:10 -0800
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 16:20:10 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 16:20:10 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 16:20:10 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 16:20:10 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 16:20:10 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 16:20:10 -0800
+
+
+Started GET "/assets/suggestions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 16:20:10 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 16:20:10 -0800
+
+
+Started POST "/puppies/1/suggestions" for ::1 at 2016-01-05 16:21:18 -0800
+Processing by SuggestionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/0f1U2J/AT7BSEYveVDPFzS0uSpBYjFg3yeB4QgVDAKCuyGc0/ARft00peyb9EvSE6W2evBANfuPdbkxwmrccQ==", "suggestion"=>{"name"=>""}, "commit"=>"Create Suggestion", "puppy_id"=>"1"}
+  [1m[35mPuppy Load (0.1ms)[0m  SELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/puppies/1
+Completed 302 Found in 12ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/puppies/1" for ::1 at 2016-01-05 16:21:18 -0800
+Processing by PuppiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPuppy Load (0.1ms)[0m  [1mSELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSuggestion Load (0.1ms)[0m  SELECT "suggestions".* FROM "suggestions" WHERE "suggestions"."puppy_id" = ?  [["puppy_id", 1]]
+  Rendered puppies/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 25ms (Views: 23.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/puppies/1" for ::1 at 2016-01-05 16:25:46 -0800
+Processing by PuppiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPuppy Load (0.1ms)[0m  [1mSELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSuggestion Load (0.1ms)[0m  SELECT "suggestions".* FROM "suggestions" WHERE "suggestions"."puppy_id" = ?  [["puppy_id", 1]]
+  Rendered puppies/show.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 33ms (Views: 24.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 16:25:46 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 16:25:46 -0800
+
+
+Started GET "/assets/suggestions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 16:25:46 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 16:25:46 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 16:25:46 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 16:25:46 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 16:25:46 -0800
+
+
+Started GET "/assets/suggestions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 16:25:46 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 16:25:46 -0800
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 16:25:51 -0800
+Processing by PuppiesController#index as HTML
+  [1m[36mPuppy Load (0.2ms)[0m  [1mSELECT "puppies".* FROM "puppies"[0m
+  Rendered puppies/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 16:31:29 -0800
+Processing by PuppiesController#index as HTML
+  [1m[35mPuppy Load (0.1ms)[0m  SELECT "puppies".* FROM "puppies"
+  Rendered puppies/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 15ms (Views: 14.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 16:31:30 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 16:31:30 -0800
+
+
+Started GET "/assets/suggestions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 16:31:30 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 16:31:30 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 16:31:30 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 16:31:30 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 16:31:30 -0800
+
+
+Started GET "/assets/suggestions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 16:31:30 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 16:31:30 -0800
+
+
+Started GET "/puppies/1" for ::1 at 2016-01-05 16:31:31 -0800
+Processing by PuppiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPuppy Load (0.3ms)[0m  [1mSELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSuggestion Load (0.1ms)[0m  SELECT "suggestions".* FROM "suggestions" WHERE "suggestions"."puppy_id" = ?  [["puppy_id", 1]]
+  Rendered puppies/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 29ms (Views: 27.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/puppies/1/edit" for ::1 at 2016-01-05 16:31:33 -0800
+Processing by PuppiesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPuppy Load (0.1ms)[0m  [1mSELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered puppies/_form.html.erb (3.2ms)
+  Rendered puppies/edit.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 30ms (Views: 29.4ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/puppies/1" for ::1 at 2016-01-05 16:31:40 -0800
+Processing by PuppiesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0H931CA3D78af0Tk8Vvyr/ZqcVIoonL5EyU+Zm6eM5Wtg6Mbkbgf/wYDpycT/3Zq0Xt+ApmAdmJDdwa2pOHj5g==", "puppy"=>{"owner"=>"Qiao", "color"=>"white", "description"=>""}, "commit"=>"Update Puppy", "id"=>"1"}
+  [1m[35mPuppy Load (0.1ms)[0m  SELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "puppies" SET "owner" = ?, "description" = ?, "updated_at" = ? WHERE "puppies"."id" = ?  [["owner", "Qiao"], ["description", ""], ["updated_at", "2016-01-06 00:31:40.208211"], ["id", 1]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/puppies/1
+Completed 302 Found in 9ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/puppies/1" for ::1 at 2016-01-05 16:31:40 -0800
+Processing by PuppiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPuppy Load (0.1ms)[0m  SELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSuggestion Load (0.1ms)[0m  [1mSELECT "suggestions".* FROM "suggestions" WHERE "suggestions"."puppy_id" = ?[0m  [["puppy_id", 1]]
+  Rendered puppies/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/puppies/1/edit" for ::1 at 2016-01-05 16:31:45 -0800
+Processing by PuppiesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPuppy Load (0.1ms)[0m  SELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered puppies/_form.html.erb (0.8ms)
+  Rendered puppies/edit.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 16ms (Views: 15.5ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/puppies/1" for ::1 at 2016-01-05 16:31:52 -0800
+Processing by PuppiesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qPdzFdXqNI709udEqzdeBT4NFk2qHuNDnR5zE1C7HO/VC6faZGUkzuiKBIdJk9rAGRwZHRs859jNTEvDmsTMnA==", "puppy"=>{"owner"=>"Qiao", "color"=>"white", "description"=>"It's a new puppy!"}, "commit"=>"Update Puppy", "id"=>"1"}
+  [1m[36mPuppy Load (0.1ms)[0m  [1mSELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "puppies" SET "description" = ?, "updated_at" = ? WHERE "puppies"."id" = ?[0m  [["description", "It's a new puppy!"], ["updated_at", "2016-01-06 00:31:52.756678"], ["id", 1]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/puppies/1
+Completed 302 Found in 7ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/puppies/1" for ::1 at 2016-01-05 16:31:52 -0800
+Processing by PuppiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPuppy Load (0.1ms)[0m  [1mSELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSuggestion Load (0.1ms)[0m  SELECT "suggestions".* FROM "suggestions" WHERE "suggestions"."puppy_id" = ?  [["puppy_id", 1]]
+  Rendered puppies/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/puppies/1" for ::1 at 2016-01-05 16:33:04 -0800
+Processing by PuppiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPuppy Load (0.1ms)[0m  [1mSELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSuggestion Load (0.1ms)[0m  SELECT "suggestions".* FROM "suggestions" WHERE "suggestions"."puppy_id" = ?  [["puppy_id", 1]]
+  Rendered puppies/show.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 16:33:04 -0800
+
+
+Started GET "/assets/suggestions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 16:33:04 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 16:33:04 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 16:33:04 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 16:33:04 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 16:33:04 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 16:33:04 -0800
+
+
+Started GET "/assets/suggestions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 16:33:04 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 16:33:04 -0800
+
+
+Started GET "/puppies/1" for ::1 at 2016-01-05 16:33:21 -0800
+Processing by PuppiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPuppy Load (0.1ms)[0m  [1mSELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSuggestion Load (0.1ms)[0m  SELECT "suggestions".* FROM "suggestions" WHERE "suggestions"."puppy_id" = ?  [["puppy_id", 1]]
+  Rendered puppies/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 16:33:21 -0800
+
+
+Started GET "/assets/suggestions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 16:33:21 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 16:33:21 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 16:33:21 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 16:33:21 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 16:33:21 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 16:33:21 -0800
+
+
+Started GET "/assets/suggestions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 16:33:21 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 16:33:21 -0800
+
+
+Started GET "/puppies/1" for ::1 at 2016-01-05 16:33:45 -0800
+Processing by PuppiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPuppy Load (0.1ms)[0m  [1mSELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSuggestion Load (0.1ms)[0m  SELECT "suggestions".* FROM "suggestions" WHERE "suggestions"."puppy_id" = ?  [["puppy_id", 1]]
+  Rendered puppies/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 16:33:46 -0800
+
+
+Started GET "/assets/suggestions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 16:33:46 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 16:33:46 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 16:33:46 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 16:33:46 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 16:33:46 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 16:33:46 -0800
+
+
+Started GET "/assets/suggestions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 16:33:46 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 16:33:46 -0800
+
+
+Started GET "/puppies/1" for ::1 at 2016-01-05 16:33:54 -0800
+Processing by PuppiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPuppy Load (0.1ms)[0m  [1mSELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSuggestion Load (0.1ms)[0m  SELECT "suggestions".* FROM "suggestions" WHERE "suggestions"."puppy_id" = ?  [["puppy_id", 1]]
+  Rendered puppies/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 16:33:55 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 16:33:55 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 16:33:55 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 16:33:55 -0800
+
+
+Started GET "/assets/suggestions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 16:33:55 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 16:33:55 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 16:33:55 -0800
+
+
+Started GET "/assets/suggestions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 16:33:55 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 16:33:55 -0800
+
+
+Started GET "/puppies/1" for ::1 at 2016-01-05 16:35:24 -0800
+Processing by PuppiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPuppy Load (0.1ms)[0m  [1mSELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mSuggestion Load (0.1ms)[0m  SELECT "suggestions".* FROM "suggestions" WHERE "suggestions"."puppy_id" = ?  [["puppy_id", 1]]
+  Rendered puppies/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 22ms (Views: 21.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 16:35:25 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 16:35:25 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 16:35:25 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 16:35:25 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 16:35:25 -0800
+
+
+Started GET "/assets/suggestions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 16:35:25 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 16:35:25 -0800
+
+
+Started GET "/assets/suggestions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 16:35:25 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 16:35:25 -0800
+
+
+Started GET "/puppies" for ::1 at 2016-01-05 16:35:26 -0800
+Processing by PuppiesController#index as HTML
+  [1m[36mPuppy Load (0.1ms)[0m  [1mSELECT "puppies".* FROM "puppies"[0m
+  Rendered puppies/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/puppies/1" for ::1 at 2016-01-05 16:39:15 -0800
+
+SyntaxError (/Users/square/Desktop/corgi/app/controllers/puppies_controller.rb:3: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+	before_action :find_puppym except: [:index, :new, :create]
+	                                 ^):
+  app/controllers/puppies_controller.rb:3: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+
+
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.9ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (48.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (37.6ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (90.2ms)
+
+
+Started GET "/puppies/1" for ::1 at 2016-01-05 16:39:28 -0800
+
+SyntaxError (/Users/square/Desktop/corgi/app/controllers/puppies_controller.rb:3: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+	before_action :find_puppy except: [:index, :new, :create]
+	                                ^):
+  app/controllers/puppies_controller.rb:3: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+
+
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.8ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (45.8ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (38.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/square/.rvm/gems/ruby-2.3.0@corgi/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (90.7ms)
+
+
+Started GET "/puppies/1" for ::1 at 2016-01-05 16:39:39 -0800
+Processing by PuppiesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPuppy Load (0.1ms)[0m  SELECT  "puppies".* FROM "puppies" WHERE "puppies"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSuggestion Load (0.1ms)[0m  [1mSELECT "suggestions".* FROM "suggestions" WHERE "suggestions"."puppy_id" = ?[0m  [["puppy_id", 1]]
+  Rendered puppies/show.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 28ms (Views: 22.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/puppies.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 16:39:40 -0800
+
+
+Started GET "/assets/suggestions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-01-05 16:39:40 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2016-01-05 16:39:40 -0800
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-01-05 16:39:40 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2016-01-05 16:39:40 -0800
+
+
+Started GET "/assets/puppies.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 16:39:40 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-01-05 16:39:40 -0800
+
+
+Started GET "/assets/suggestions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-01-05 16:39:40 -0800
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-01-05 16:39:40 -0800
